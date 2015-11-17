@@ -16,15 +16,15 @@ var Box = React.createClass({
  	componentWillMount: function() {
 		var current = this;
 	    	this.timer = setInterval(function(){
-			var oldValue = current.state.bValue;
-			var newValue;
-			if(oldValue === 'X'){
-				newValue = 'O';
+			var old = current.state.bValue;
+			var new;
+			if(old === 'X'){
+				new = 'O';
 			}
 			else{
-				newValue='X';
+				new='X';
 			}
-			current.setState({bValue:newValue});
+			current.setState({bValue:new});
 		},300);
 	 },
 
