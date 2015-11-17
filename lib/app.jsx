@@ -9,16 +9,16 @@ var buttonStyle = {
 };
 
 var Box = React.createClass({
-  /**
-   * Render a HTML button
-   * @return {ReactElement}
-   */
+
+   getInitialState: function() {
+   return {bValue: this.props.initialbValue};
+ },
   'render': function onRender () {
     return (
-      <button style={buttonStyle}>{this.props.bValue}</button>
+      <button style={buttonStyle}>{this.state.bValue}</button>
     );
   }
 });
 
 // here we ask React to add the component Box into the body
-React.render(<Box bValue='Y'/>, document.body);
+React.render(<Box initialbValue='X'/>, document.body);
