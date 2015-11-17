@@ -13,25 +13,18 @@ var Box = React.createClass({
    	getInitialState: function() {
    		return {bValue: this.props.initialbValue};
  	},
- 	componentWillMount: function() {
-		var current = this;
-	    	this.timer = setInterval(function(){
-			var old = current.state.bValue;
-			var new;
-			if(old === 'X'){
-				new = 'O';
-			}
-			else{
-				new='X';
-			}
-			current.setState({bValue:new});
-		},300);
-	 },
+
+  handleClick: function() {
+ 		var current = this;
+ 		var oldValue = current.state.bValue;
+ 		var newValue = oldValue === 'X' ? 'O' : 'X';
+ 		current.setState({ bValue:newValue});
+ 	  },
 
 
   'render': function onRender () {
     return (
-      <button style={buttonStyle}>{this.state.bValue}</button>
+      <button style={buttonStyle} onClick={this.handleClick}>{this.state.bValue}</button>
     );
   }
 });
