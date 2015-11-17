@@ -14,4 +14,5 @@ var Box = React.createClass({
   }
 });
 
+// here we ask React to add the component Box into the body
 React.render(<Box/>, document.body);
