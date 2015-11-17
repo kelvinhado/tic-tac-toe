@@ -9,10 +9,10 @@ var Box = React.createClass({
    */
   'render': function onRender () {
     return (
-      <button>X</button>
+      <button>{this.props.bValue}</button>
     );
   }
 });
 
 // here we ask React to add the component Box into the body
-React.render(<Box/>, document.body);
+React.render(<Box bValue='Y'/>, document.body);
